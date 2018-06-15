@@ -4,7 +4,7 @@ window.onload = function (e) {
     });
 };
 
-function initializeApp(data) {
+function initializeApp(data,profile) {
     document.getElementById('languagefield').textContent = data.language;
     document.getElementById('viewtypefield').textContent = data.context.viewType;
     document.getElementById('useridfield').textContent = data.context.userId;
