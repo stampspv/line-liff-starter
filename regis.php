@@ -2,6 +2,18 @@
 
 if(isset($_GET['name'])){
 	var_dump($_GET);
+	$servername = "csku.science";
+	$username = "spppaper_dutch";
+	$password = "OvS5LHDc";
+	$dbname = "spppaper_dutch";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
 }else{
 
 }
@@ -16,7 +28,7 @@ if(isset($_GET['name'])){
 <div class="row">
 	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<center><h1>UPPERCUZ DEV.5.2</h1></center>
+		<center><h1>UPPERCUZ DEV 5.3</h1></center>
 		<form action="/regis.php" method="get">
 		  <div class="form-group">
 		    <label>ชื่อ-นามสกุล :</label>
@@ -32,7 +44,7 @@ if(isset($_GET['name'])){
 		  </div>
 		  <div class="form-group">
 		    <label>UserID :</label>
-		    <input type="text" class="form-control" id="userid" name="userid">
+		    <input type="text" class="form-control" id="userid" name="userid" readonly="readonly">
 		  </div>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		</form>
@@ -49,7 +61,7 @@ window.onload = function (e) {
     });
 };
 function initializeApp(data) {
-	$(".userid").val("sd");
+	$("#userid").val("sd");
     // document.getElementById('languagefield').textContent = data.language;
     // document.getElementById('viewtypefield').textContent = data.context.viewType;
     // document.getElementById('useridfield').textContent = data.context.userId;
