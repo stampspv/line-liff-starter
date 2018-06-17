@@ -1,6 +1,6 @@
 <?
 
-isset($_GET){
+if(isset($_GET)){
 	var_dump($_GET);
 }
 
@@ -14,7 +14,7 @@ isset($_GET){
 <div class="row">
 	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<center><h1>UPPERCUZ DEV.5</h1></center>
+		<center><h1>UPPERCUZ DEV.5.1</h1></center>
 		<form action="/regis.php" method="get">
 		  <div class="form-group">
 		    <label>ชื่อ-นามสกุล :</label>
