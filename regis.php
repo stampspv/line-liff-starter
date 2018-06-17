@@ -28,7 +28,7 @@ if(isset($_GET['name'])){
 <div class="row">
 	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<center><h1>UPPERCUZ DEV 5.3</h1></center>
+		<center><h1>UPPERCUZ DEV 5.4</h1></center>
 		<form action="/regis.php" method="get">
 		  <div class="form-group">
 		    <label>ชื่อ-นามสกุล :</label>
@@ -57,11 +57,13 @@ if(isset($_GET['name'])){
 <script>
 window.onload = function (e) {
     liff.init(function (data) {
+    	console.log("-> 1");
         initializeApp(data);
     });
 };
 function initializeApp(data) {
-	$("#userid").val("sd");
+	console.log("-> 2");
+	$('iput[name="userid"]').val("sd");
     // document.getElementById('languagefield').textContent = data.language;
     // document.getElementById('viewtypefield').textContent = data.context.viewType;
     // document.getElementById('useridfield').textContent = data.context.userId;
