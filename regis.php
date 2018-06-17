@@ -45,7 +45,7 @@ if(isset($_GET['name'])){
 	<div class="row">
 		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-			<center><h1>UPPERCUZ DEV 5.12</h1></center>
+			<center><h1>UPPERCUZ DEV 5.13</h1></center>
 			<form action="/regis.php" method="get">
 			  <div class="form-group">
 			    <label>ชื่อ-นามสกุล :</label>
