@@ -1,7 +1,9 @@
 <?
 
-if(isset($_GET)){
+if(isset($_GET['name'])){
 	var_dump($_GET);
+}else{
+
 }
 
 ?>
@@ -14,7 +16,7 @@ if(isset($_GET)){
 <div class="row">
 	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<center><h1>UPPERCUZ DEV.5.1</h1></center>
+		<center><h1>UPPERCUZ DEV.5.2</h1></center>
 		<form action="/regis.php" method="get">
 		  <div class="form-group">
 		    <label>ชื่อ-นามสกุล :</label>
@@ -28,8 +30,28 @@ if(isset($_GET)){
 		    <label>เบอร์โทรศัพท์ :</label>
 		    <input type="phone" class="form-control" id="tel" name="tel">
 		  </div>
+		  <div class="form-group">
+		    <label>UserID :</label>
+		    <input type="text" class="form-control" id="userid" name="userid">
+		  </div>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</div>
 	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 </div>
+
+
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script>
+window.onload = function (e) {
+    liff.init(function (data) {
+        initializeApp(data);
+    });
+};
+function initializeApp(data) {
+	$(".userid").val("sd");
+    // document.getElementById('languagefield').textContent = data.language;
+    // document.getElementById('viewtypefield').textContent = data.context.viewType;
+    // document.getElementById('useridfield').textContent = data.context.userId;
+}
+</script>
