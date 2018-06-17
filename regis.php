@@ -58,13 +58,11 @@ if(isset($_GET['name'])){
 	<script>
 	window.onload = function (e) {
 	    liff.init(function (data) {
-	    	console.log("-> 1");
 	        initializeApp(data);
 	    });
 	};
 	function initializeApp(data) {
-		console.log("-> 2");
-		$('iput[name="userid"]').val("sd");
+		$('iput[name="userid"]').val(data.context.userId);
 	    // document.getElementById('languagefield').textContent = data.language;
 	    // document.getElementById('viewtypefield').textContent = data.context.viewType;
 	    // document.getElementById('useridfield').textContent = data.context.userId;
