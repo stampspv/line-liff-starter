@@ -11,6 +11,7 @@ $v = Array(
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, trim($api_url));
+curl_setopt($ch, CURLOPT_POST, 1);
 //curl_setopt($ch, CURLOPT_PORT, 80); //ignore explicit setting of port 80
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
