@@ -1,34 +1,39 @@
 <?
+$servername = "csku.science";
+$username = "spppaper_dutch";
+$password = "OvS5LHDc";
+$dbname = "spppaper_dutch";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysqli_set_charset($conn,"utf8");
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if(isset($_GET['name'])){
 	var_dump($_GET);
-	$servername = "csku.science";
-	$username = "spppaper_dutch";
-	$password = "OvS5LHDc";
-	$dbname = "spppaper_dutch";
+	$name = $_GET['name'];
+	$email = $_GET['email'];
+	$telephone = $_GET['tel'];
+	$userid = $_GET['userid'];
+	$sql = "INSERT INTO `customers` VALUES ('','$name','$email','$telephone','$userid','0','1','','')";
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	mysqli_set_charset($conn,"utf8");
-	// Check connection
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
-	}else{
-		$name = $_GET['name'];
-		$email = $_GET['email'];
-		$telephone = $_GET['tel'];
-		$userid = $_GET['userid'];
-		$sql = "INSERT INTO `customers` VALUES ('','$name','$email','$telephone','$userid','0','1','','')";
-
-		if ($conn->query($sql) === TRUE) {
-		    echo "New record created successfully";
-		} else {
-		    echo "Error: " . $sql . "<br>" . $conn->error;
-		}
+	if ($conn->query($sql) === TRUE) {
+	    echo "New record created successfully";
+	} else {
+	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 }else{
 
 }
+
+
+$line_user_id = "<script>document.writeln(lineKey);</script>";
+echo $line_user_id;
+// $product_name = $mysqli->query("SELECT product_name FROM products WHERE id = 1")->fetch_object()->product_name;
+// print $product_name;
+
 
 ?>
 
@@ -78,7 +83,8 @@ if(isset($_GET['name'])){
 	    });
 	};
 	function initializeApp(data) {
-		$('input[name="userid"]').val(data.context.userId);
+		var lineKey = data.context.userId;
+		$('input[name="userid"]').val(lineKey);
 	    // document.getElementById('languagefield').textContent = data.language;
 	    // document.getElementById('viewtypefield').textContent = data.context.viewType;
 	    // document.getElementById('useridfield').textContent = data.context.userId;
